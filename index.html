@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Model Viewer AR - VR</title>
+  <meta name="description" content="Model Viewer (VR / AR) • A-Frame">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="info-message.js"></script>
+  <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
+  <script src="hide-on-enter-ar.js"></script>
+  <script src="ar-shadows.js"></script>
+  <script src="ar-hit-test.js"></script>
+  <script src="model-viewer.js"></script>
+  <script src="background-gradient.js"></script>
+</head>
+<body>
+
+<a-scene
+  renderer="colorManagement: true;"
+  info-message="htmlSrc: #messageText"
+  model-viewer="gltfModel: #train; title: Train">
+  <a-camera position="0 10 5"></a-camera>
+  <a-assets>
+    <a-asset-item id="train"
+      src="./Surprising Leelo-Stantia (1).glb"
+      response-type="arraybuffer"></a-asset-item>
+  </a-assets>
+  <a-box gltf-model="#train" scale="0.1 0.1 0.1"></a-box>
+</a-scene>
+</body>
+</html>
